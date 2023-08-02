@@ -85,7 +85,7 @@ const CoinInfo = ({ coin }) => {
                 datasets: [
                   {
                     data: historicData.map((coin) => coin[1]),
-                    label: `Price ( Past ${days} Days ) in ${currency}`,
+                    label: `Price  in ${currency}`,
                     borderColor: "#EEBC1D",
                   },
                 ],
@@ -98,26 +98,6 @@ const CoinInfo = ({ coin }) => {
                 },
               }}
             />
-            <div
-              style={{
-                display: "flex",
-                marginTop: 20,
-                justifyContent: "space-around",
-                width: "100%",
-              }}
-            >
-              {chartDays.map((day) => (
-                <SelectButton
-                  key={day.value}
-                  onClick={() => {setDays(day.value);
-                    setflag(false);
-                  }}
-                  selected={day.value === days}
-                >
-                  {day.label}
-                </SelectButton>
-              ))}
-            </div>
           </>
         )}
       </div>
